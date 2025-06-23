@@ -1,0 +1,1 @@
+{"version":1,"contracts":[{"id":"78fsfpt52l8qo","package_name":"soulscrolls","contract_name":"SoulScrolls","module_path":"soulscrolls::SoulScrolls","artifacts":{"sierra":"soulscrolls_integrationtest_SoulScrolls.test.contract_class.json","casm":null}}]}
