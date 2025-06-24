@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-200 font-sans min-h-screen;
+    background: linear-gradient(120deg, #0a0e23 0%, #23294a 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 18s ease infinite;
+    position: relative;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-black/60 backdrop-blur-lg border border-blue-900/40 rounded-2xl shadow-2xl transition-all duration-300 relative overflow-hidden;
+}
+  .glass-card:hover {
+    @apply border-blue-400/80 shadow-blue-900/30;
+}
+  .card-animated-border {
+    position: relative;
+    z-index: 1;
+  }
+  .card-animated-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: 1.5rem;
+    background: linear-gradient(270deg, #23294a, #0a0e23 90%);
+    background-size: 400% 400%;
+    animation: borderGradientMove 8s linear infinite;
+  }
+}
+
+@keyframes borderGradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 80% 20%, rgba(128, 78, 255, 0.4), transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(79, 0, 255, 0.4), transparent 40%),
+              #0d012c;
+  background-size: 200% 200%;
+  animation: gradient-flow 20s ease-in-out infinite;
+  will-change: background-position;
+  }
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
