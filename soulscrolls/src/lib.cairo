@@ -62,6 +62,7 @@ pub mod SoulScrolls {
         all_scrolls_len: u64,
         user_scroll_ids: Map<(ContractAddress, u64), felt252>,
         user_scrolls_len: Map<ContractAddress, u64>,
+        owner: ContractAddress,
     }
 
     #[abi(embed_v0)]
@@ -157,5 +158,10 @@ pub mod SoulScrolls {
             }
             user_scroll_ids
         }
+    }
+
+    #[constructor]
+    fn constructor(ref self: ContractState, owner: ContractAddress) {
+        self.owner.write(owner);
     }
 }

@@ -5,7 +5,8 @@ use starknet::ContractAddress;
 // Helper function to deploy the contract
 fn deploy_contract() -> ISoulScrollsDispatcher {
     let contract = declare("SoulScrolls").unwrap().contract_class();
-    let (contract_address, _) = contract.deploy(@array![]).unwrap();
+    let owner: ContractAddress = 999.try_into().unwrap();
+    let (contract_address, _) = contract.deploy(@array![owner.into()]).unwrap();
     ISoulScrollsDispatcher { contract_address }
 }
 

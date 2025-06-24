@@ -1,0 +1,17 @@
+{
+    "name": "soulscrolls-deployer",
+    "version": "1.0.0",
+    "description": "Deployment scripts for the SoulScrolls contract",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "setup": "node scripts/setup.js",
+        "declare": "node scripts/declare.js",
+        "deploy-only": "node scripts/deploy-only.js",
+        "deploy": "npm run declare && npm run deploy-only"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "starknet": "^6.24.1"
+    }
+}
