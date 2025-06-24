@@ -1,0 +1,6 @@
+keystore.json
+soulscrolls/target/
+soulscroll-app/node_modules/
+soulscroll-app/dist/
+.env*
+.cursor/
